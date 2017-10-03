@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Neural Network</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -16,8 +16,18 @@
         <li>If you whistle, he must run.</li>
         <li>If you clap AND whistle, he must jump.</li>
     </ul>
+    <p>Please Provide an action set and a learning rate.</p>
     <p>The first element of the input will be 1 if you are clapping, and 0 otherwise. Similarly, the second element will be 1 if you are whistling, and 0 otherwise.</p>
-    <input type="text" value="" placeholder="E.G. 0, 1 = Not Clapping, But Whistling" id="array-input">
+    <p>A very low learning rate will usually make the neural network a slow, but very good learner. On the other hand, a very high learning rate will make it learn quickly, but also very erratically.</p>
+    <br>
+    <div>
+        <p>Action Input</p>
+        <input type="text" value="" placeholder="E.G. 0, 1 = Not Clapping, But Whistling" id="array-input">
+    </div>
+    <div>
+        <p>Learning Rate</p>
+        <input type="text" value="" placeholder="Enter Learning Rate" id="learning-rate">
+    </div>
     <button onclick="submit()">Submit</button>
     <div id="hidden">
         <h2>Results</h2>
