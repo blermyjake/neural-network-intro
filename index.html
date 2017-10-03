@@ -7,7 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Intro To Neural Networks</h1>
+    <p>Please Enter a Two Character Combination of Zero's or One's</p>
+    <p>We'll be teaching a dog to either sit, run, or jump</p>
+    <ul>
+        <li>If you clap, he must sit down.</li>
+        <li>If you whistle, he must run.</li>
+        <li>If you clap AND whistle, he must jump.</li>
+    </ul>
+    <p>The first element of the input will be 1 if you are clapping, and 0 otherwise. Similarly, the second element will be 1 if you are whistling, and 0 otherwise.</p>
+    <input type="text" value="" placeholder="E.G. 0, 1 = Not Clapping, But Whistling" id="array-input">
+    <button onclick="submit()">Submit</button>
+    <div id="hidden">
+        <h2>Results</h2>
+        <p id="sit"></p>
+        <p id="run"></p>
+        <p id="jump"></p>
+    </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/synaptic/1.0.8/synaptic.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

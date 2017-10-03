@@ -1,3 +1,8 @@
+const hidden = document.getElementById('hidden');
+const sit = document.getElementById('sit');
+const run = document.getElementById('run');
+const jump = document.getElementById('jump');
+hidden.style.display = 'none';
 const input = new synaptic.Layer(2); // Two inputs
 const output = new synaptic.Layer(3); // Three outputs
 const learningRate = 0.4;
@@ -26,9 +31,15 @@ function retrain() {
  
 retrain();
 
-input.activate([1,0]);
-var result = output.activate();
-
-console.log("Sit Neuron: " + result[0] * 100 + "%");
-console.log("Run Neuron: " + result[1] * 100 + "%");
-console.log("Jump Neuron: " + result[2] * 100 + "%");
+function submit() {
+    const arrayInput = document.getElementById('array-input').value;
+    let userInput;
+    if (arrayInput.includes(',')) userInput = arrayInput.split(',');
+    else alert('Please include a 0 and a 1 in either order');
+    input.activate(userInput);
+    const result = output.activate();
+    sit.innerText = "Sit Neuron: " + result[0] * 100 + "%";
+    run.innerText = "Run Neuron: " + result[1] * 100 + "%";
+    jump.innerText = "Jump Neuron: " + result[2] * 100 + "%";
+    hidden.style.display = 'block';
+}
