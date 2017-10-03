@@ -34,12 +34,18 @@ retrain();
 function submit() {
     const arrayInput = document.getElementById('array-input').value;
     let userInput;
-    if (arrayInput.includes(',')) userInput = arrayInput.split(',');
-    else alert('Please include a 0 and a 1 in either order');
+    if (!arrayInput.includes(',') || arrayInput.split(',').length > 2) {
+        return alert('Please include a 0, 1, or 1, 1 or 0, 1'); 
+    }
+    else userInput = arrayInput.split(',');
+    if(Number(userInput[0] > 1) || Number(userInput[1] > 1)) {
+        return alert(`Values should consist of 1's or 0's`);
+    }
     input.activate(userInput);
     const result = output.activate();
-    sit.innerText = "Sit Neuron: " + result[0] * 100 + "%";
-    run.innerText = "Run Neuron: " + result[1] * 100 + "%";
-    jump.innerText = "Jump Neuron: " + result[2] * 100 + "%";
+    sit.innerText = `Sit Neuron: ${result[0] * 100}%`;
+    run.innerText = `Run Neuron: ${result[1] * 100}%`;
+    jump.innerText = `Jump Neuron: ${result[2] * 100}%`;
     hidden.style.display = 'block';
+    arrayInput = '';
 }
