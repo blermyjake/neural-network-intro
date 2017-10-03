@@ -32,7 +32,7 @@ function retrain() {
 retrain();
 
 function submit() {
-    const arrayInput = document.getElementById('array-input').value;
+    let arrayInput = document.getElementById('array-input').value;
     let userInput;
     if (!arrayInput.includes(',') || arrayInput.split(',').length > 2) {
         return alert('Please include a 0, 1, or 1, 1 or 0, 1'); 
